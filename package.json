@@ -1,0 +1,70 @@
+{
+  "name": "telegram-bot-duty-check",
+  "version": "1.0.0",
+  "description": "telegram-bot-duty-check",
+  "scripts": {
+    "test": "jest",
+    "lint": "eslint src/*.js src/**/*.js --fix",
+    "build": "npm run lint && babel src -d dist",
+    "dev": "cross-env TG_TOKEN= URL= nodemon dev.js",
+    "start": "npm run build && node dist/server.js",
+    "sync-db": "node sync.js"
+  },
+  "dependencies": {
+    "@koa/cors": "^2.2.3",
+    "ejs": "^2.6.1",
+    "koa": "^2.7.0",
+    "koa-bodyparser": "^4.2.1",
+    "koa-compose": "^4.1.0",
+    "koa-favicon": "^2.0.1",
+    "koa-logger": "^3.2.0",
+    "koa-multer": "^1.0.2",
+    "koa-router": "^7.4.0",
+    "koa-static2": "^0.1.8",
+    "koa-views": "^6.2.0",
+    "mariadb": "^2.0.5",
+    "moment": "^2.29.1",
+    "mysql2": "^1.6.5",
+    "request": "^2.88.2",
+    "request-promise": "^4.2.6",
+    "sequelize": "^5.8.9",
+    "sqlite3": "^5.0.2",
+    "telegraf": "^4.3.0",
+    "uuid": "^3.3.2"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.5",
+    "@babel/plugin-transform-runtime": "^7.4.4",
+    "@babel/preset-env": "^7.4.5",
+    "@babel/register": "^7.4.4",
+    "@babel/runtime": "^7.4.5",
+    "babel-eslint": "^10.0.1",
+    "babel-jest": "^24.8.0",
+    "cross-env": "^7.0.3",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.17.3",
+    "jest": "^24.8.0",
+    "nodemon": "^1.19.1",
+    "supertest": "^4.0.2"
+  },
+  "jest": {
+    "verbose": true,
+    "silent": true,
+    "testEnvironment": "node",
+    "transform": {
+      "^.+\\.js?$": "babel-jest"
+    },
+    "collectCoverage": true,
+    "coverageReporters": [
+      "text"
+    ]
+  },
+  "keywords": [
+    "koa",
+    "koa2"
+  ],
+  "author": "Karolass",
+  "license": "MIT"
+}
