@@ -5,9 +5,9 @@
   "scripts": {
     "test": "jest",
     "lint": "eslint src/*.js src/**/*.js --fix",
-    "build": "npm run lint && babel src -d dist",
-    "dev": "cross-env TG_TOKEN= URL= nodemon dev.js",
-    "start": "npm run build && node dist/server.js",
+    "build": "npm run lint && cp src/config.js.example src/config.js && babel src -d dist",
+    "dev": "cross-env TG_TOKEN= URL=nodemon dev.js",
+    "start": "npm run build && npm run sync-db && node dist/server.js",
     "sync-db": "node sync.js"
   },
   "dependencies": {
